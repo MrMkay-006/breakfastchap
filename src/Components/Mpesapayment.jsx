@@ -38,12 +38,14 @@ const Mpesapayment = () => {
     // console.log(product.food_price)
   return (
     <div className='row justify-content-center mt-3'>
-        <h1 className='mpesa mt-4'>Lipa na Mpesa</h1>
+        
         <p className='message'>{message}</p>
         <div className="col-md-6 card shadow p-3">
-        <h4 > Product name<span className='text-primary'>{product.food_name}</span></h4>
+        
         <form onSubmit={submit}>
-            <h4>Price of the Product: <span className='text-primary'>{product.food_price}</span></h4>
+            <h1 className='mpesa mt-1'>Lipa na Mpesa</h1><br />
+            <h4 ><span className="key">Food name: </span><span>{product.food_name}</span></h4>
+            <h4><span className="key">Food Price:</span> <span>Kes {product.food_price}</span></h4>
             <input 
             type="number" 
             placeholder='Enter your Mpesa number'
@@ -52,7 +54,7 @@ const Mpesapayment = () => {
             className='form-control'
             required/> <br /><br />
             {/* {phone} */}
-            {product.food_price}
+            {/* {product.food_price} */}
 
             <button className='btn btn-success'>Make Payment</button>
         </form>

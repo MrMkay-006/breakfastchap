@@ -13,6 +13,14 @@
   font-size: 30px;
   
 }
+.mpesa{
+  color: #0fd60c;
+}
+.key{
+  color: aqua;
+  font-size: 25px;
+  font-weight: 400;
+}
 .links{
   text-decoration: none;
   font-style: italic;
@@ -20,12 +28,13 @@
 }
 body{
   margin: 0px;
+  background-color: bisque;
 }
 .footer-background-color{
-  background-color: rgb(224, 37, 224);
+  background-color: rgb(18, 126, 177);
 }
 .bootom-footer{
-  background-color: rgb(32, 17, 167);
+  background-color: rgb(6, 126, 36);
 }
 .backstyling{
   background-color: rgb(161, 203, 252);

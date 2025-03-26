@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const Getorders = () => {
   const [orders, setOrders] =useState([]); //this useState hook contains an empty array
@@ -34,7 +36,8 @@ const Getorders = () => {
 
   return (
     <div className='row'>
-      <h3 className='text-info mt-3'>Available Products</h3>
+      <Navbar/>
+      <h3 className='text-info mt-3'>This are the successfull placed orders;</h3>
       {/* bind the loading andthe error */}
       {loading}
       <p className="error">{error}</p>
@@ -55,7 +58,7 @@ const Getorders = () => {
        </div>
          
       ))};
-
+      <Footer/>
       
     
     </div>

@@ -6,7 +6,7 @@ const Navbar = () => {
    
         {/* Brand Logo */}
         <Link to="/" className="navbar-brand fw-bold">
-          Breakfast<span className="break"><span className="chap">Chap</span></span>
+        <span className="break">  Breakfast</span><span className="chap">Chap</span>
         </Link>
 
         {/* Mobile Menu Button */}
@@ -26,7 +26,10 @@ const Navbar = () => {
               <b><Link to="/" className="nav-link">Get products</Link></b>
             </li>
             <li className="nav-item">
-              <b><Link to="/addproducts" className="nav-link"></Link></b>
+              <b><Link to="/addproduct" className="nav-link">Add product</Link></b>
+            </li>
+            <li>
+            <b><Link to="/getorders" className="nav-link">Get orders</Link></b>
             </li>
           </ul>
 

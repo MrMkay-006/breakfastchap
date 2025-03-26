@@ -15,12 +15,12 @@ const Aboutus = () => {
         <div className="col-md-6">
             <h2>Members</h2>
             <ul>
-                <li><img src="images/ceo.jpeg" alt="" className='image' /> Evans: CEO</li>
-                <li>Marucha: COO</li>
-                <li>Regan: Member</li>
-                <li>Rechal: Member</li>
+                <li><img src="images/ceo.jpeg" alt="" className='image' /> Evans: CEO</li> <br />
+                <li><img src="images/passport2.webp" alt="" className='image'/> Marucha: COO</li> <br />
+                <li><img src="images/member.jpg" alt="" className='image' />Regan: Member</li><br />
+                <li><img src="images/member2.webp" alt="" className="image" /> Rechal: Member</li>
             </ul>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque dicta atque, voluptatum minima iste nulla animi excepturi laboriosam? Cum impedit exercitationem minus dolor velit itaque?</p>
+            <p></p>
  
 
             <h3 className='text-primary'>Over 30+ services, over 1200+ customers served...</h3>

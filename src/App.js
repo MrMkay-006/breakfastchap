@@ -18,8 +18,7 @@ function App() {
       <div className="App">
       <header className="App-header">
         <nav>
-        <p><span id='break'>Breakfast</span><span id='chap'>Chap</span>
-        <Link to={'/'}className='links'>Get products</Link></p>
+        <span id='break'>Breakfast</span><span id='chap'>Chap</span>        
         </nav>
         
       </header>

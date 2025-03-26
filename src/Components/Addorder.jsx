@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Addorder = () => {
   const {product} = useLocation().state || {};
@@ -24,6 +24,7 @@ const Addorder = () => {
   const [loading, setLoading] = useState("");
   const [message, setMessage] =useState("");
   const [error, setError] =useState("");
+  const navigate = useNavigate("");
 
   // create a function that will handle the submit event
   const submit = async(e)=>{
@@ -47,11 +48,12 @@ const Addorder = () => {
       setLoading("");
 
       // update your message hook with a message if the deatails have been saved successfully into the database
-      setMessage("Product added successfully")
+      setMessage("Order placed successfully")
       // set the timeout of the message
       setTimeout(() => {
         setMessage("");
       }, 8000)
+       navigate("/")
 
     }
     catch(error){
@@ -65,13 +67,15 @@ const Addorder = () => {
       <div className="col-md-6 card shadow p-4">
         <form onSubmit={submit}>
           <h2>Confirm your order</h2>
-          {product.food_name} <br />
-          {product.food_price} <br />
-          {customer_name} 
-          {orderdate()} <br />
           {loading}
           <p className="message">{message}</p>
           <p className="error">{error}</p>
+          <p><span className="key">Food Name:</span> {product.food_name}</p> 
+          <p><span className="key">Food Price:</span> {product.food_price}</p> 
+          {/* {customer_name}  */}
+          <p><span className="key">Order Date:</span> {orderdate()}</p> <br />
+          <p>Please fill your name to complete the order!</p>
+          
           <input 
           type="text"
           placeholder='Enter your username' 
