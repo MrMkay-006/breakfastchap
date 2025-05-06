@@ -49,7 +49,7 @@ const Getorders = () => {
 
           {/* below is the card body */}
           <div className="card-body">
-            <h5 className="mt-2">Breakfast Name: {order.food_name}</h5>
+            <h5 className="mt-2">Food Name: {order.food_name}</h5>
             <p className="text-muted"> Order date: {order.order_date}</p> <br />
             <b className="text-warning"> Cost: {order.food_price}</b> <br />
             <b className="text-warning">To: {order.customer_name}</b><br />

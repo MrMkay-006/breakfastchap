@@ -19,7 +19,7 @@ const Getproducts = () => {
   // create a function that will handle the get operation/method
   const getproducts= async () => {
     //update the loading hook with a meassage
-    setLoading("<<<<Please wit as we retrieve the products>>>>")
+    setLoading("<<<<Please wait as we retrieve the products>>>>")
     try {
       // handle the response given from pythonanywhere
       const response = await axios.get("https://mrmkay.pythonanywhere.com/api/get_products")
@@ -27,24 +27,16 @@ const Getproducts = () => {
       // update the products hook with the recieved from the api
       setProducts(response.data)
       // set the loading hook back to default
-      setLoading("");      
+      setLoading("");
+      
       
     } 
     catch (error) {
       // set the loading hook back to default
       setLoading(""); 
       // project an error message
-      setError("There was an error encountered")     
-      // Retrieve the JSON string from localStorage
-      const userData = localStorage.getItem("user");
-
-      // Parse the JSON string back into a JavaScript object
-      if (userData) {
-        const user = JSON.parse(userData);
-        console.log(user); // Logs the parsed user object
-      } else {
-        console.log("No user data found in localStorage.");
-      }
+      setError("Sorry! There was an error encountered")     
+     
 
 
     }
@@ -60,11 +52,24 @@ const Getproducts = () => {
        item.food_name.toLowerCase().includes(search.toLowerCase())||
        item.food_info.toLowerCase().includes(search.toLowerCase())
       );
+      const [customerName, setCustomerName] = useState("");
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            const parsedUser = JSON.parse(storedUser);
+            setCustomerName(parsedUser.customer_name);
+        }
+    }, []);
+
+
 
   return (
     <div className='row'>
       <Navbar/>
+      {/* <Nav/> */}
       <ImageCarousel/>
+      <div><h2>Welcome, {customerName}!</h2></div>
       <h3 className='text-info mt-3 text-start'>Available Products</h3>
       <div className="row justify-content-center mt-3 mb-3">
         <input
@@ -82,7 +87,7 @@ const Getproducts = () => {
       
       {filtered_products.map((product)=>(
        <div className="col-md-3 justify-content-center mb-4">
-        {/* below div will cary the card that contain a single product */}
+        {/* below div will carry the card that contain a single product */}
         <div className="card shadow">
           <img src={img_url + product.food_photo} className='product_img mt-4' alt="" />
 
@@ -91,7 +96,7 @@ const Getproducts = () => {
             <h5 className="mt-2">{product.food_name}</h5>
             <p className="text-muted">{product.food_info.slice(0,50)}...</p>
             <b className="text-warning">Kes {product.food_price}</b><br />
-            <button className='btn btn-info' onClick={() =>navigate("/mpesapayment",{state : {product}})}>Purchase Now</button>
+            <button className='btn btn-info' onClick={() =>navigate("/mpesapayment",{state : {product}})}>Order Now</button>
           </div>
         </div>
        </div>

@@ -10,6 +10,8 @@ import Addorder from './Components/Addorder';
 import Signup from './Components/Signup';
 import Mpesapayment from './Components/Mpesapayment';
 import Aboutus from './Components/Aboutus';
+import Myorder from './Components/Myorder';
+import ChatBot from './Components/Chatbot';
 
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
       <div className="App">
       <header className="App-header">
         <nav>
-        <span id='break'>Breakfast</span><span id='chap'>Chap</span>        
+        <h1 className="head">BreakfastChap</h1>       
         </nav>
         
       </header>
@@ -29,8 +31,10 @@ function App() {
         <Route path='/getorders' element={<Getorders/>}/>
         <Route path='/signin' element={<Signin/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/myorders' element={<Myorder/>}/>
         <Route path='/mpesapayment' element={<Mpesapayment/>}/>
         <Route path='/aboutus' element={<Aboutus/>}/>
+        <Route path='/Chat us' element={<ChatBot/>}/>
       </Routes>
     </div>
 

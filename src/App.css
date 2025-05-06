@@ -8,10 +8,149 @@
   font-size: 40px;
   margin-right: 40px;
 }
+/* chat start */
+.chatbot-container {
+  width: 400px;
+  height: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.chat-window {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Chat end */
+
+/* message start */
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.message.user {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+}
+
+
+/* Message end */
+/* head{
+  font-size: 3rem;
+  color: #fff;
+  background: url('public/images/team.jpeg') center;
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 10s linear infinite;. */
+/* } */
+@keyframes animate{
+  to{
+    background-position-x: -200px ;
+  }
+}
+/* nav starts */
+/* Background Image */
+body {
+  
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  z-index: 1000;
+  background-image: url("leaf.jpg"); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Logo */
+.navbar__logo img {
+  width: 80px; /* Adjust logo size */
+  height: auto;
+}
+
+/* Navigation Links */
+.navbar__nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin: 0 15px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.navbar__nav a:hover {
+  color: #ffcc00; /* Golden highlight */
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+/* nav ends */
 #break{
   font-weight: 600;
-  font-size: 30px;
-  
+  font-size: 30px;  
+}
+.error{
+  color: red;
 }
 .mpesa{
   color: #0fd60c;
