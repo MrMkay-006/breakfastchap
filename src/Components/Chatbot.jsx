@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Message from "./Message";
+import { Carousel } from "bootstrap";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 
 const ChatBot = () => {
@@ -82,7 +85,10 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="chatbot-container">
+    <div className="row">
+      <Navbar/>
+      <div className="col-md-4"></div>
+      <div className="chatbot-container mb-4 p-3 col-md-4 ">
       <div className="chat-header">BreakfastChap Bot</div>
       <div className="chat-window" ref={chatRef}>
         {messages.map((msg, i) => (
@@ -99,6 +105,9 @@ const ChatBot = () => {
         />
         <button onClick={handleSend}>Send</button>
       </div>
+    </div>
+    <div className="col-md-4"></div>
+    <Footer/>
     </div>
   );
 };

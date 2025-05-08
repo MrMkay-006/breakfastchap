@@ -43,7 +43,7 @@ const Myorders = () => {
     return (
         <div className='row'>
               <Navbar/>
-              <h3 className="text-start">Hello {username}, this are the successful orders you placed</h3>
+              <h3 className="text-start">Hello {username && <span style={{color: "cyan"}}>{username}</span>}, this are the successful orders you placed</h3>
               {loading && <p>Loading orders please wait...</p>}
               {error && <p style={{ color: "red" }}>{error}</p>}
               
@@ -56,7 +56,7 @@ const Myorders = () => {
                   <div className="card-body">
                     <h5 className="mt-2">Food Name: {order.food_name}</h5>
                     <p className="text-muted"> Order date: {order.order_date}</p> <br />
-                    <b className="text-warning"> Cost: {order.food_price}</b> <br />
+                    <b className="text-warning "> Total Cost: {order.total_price}</b> <br />
                     <b className="text-warning">To: {order.customer_name}</b><br />
                   </div>
                 </div>

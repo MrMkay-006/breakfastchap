@@ -2,6 +2,8 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 const Signin = () => {
@@ -63,6 +65,7 @@ const Signin = () => {
 
   return (
     <div className='row justify-content-center mt-5'>
+      <Navbar/>
 
       <div className="card shadow col-md-6 p-4">
         <h2>Sign In</h2>
@@ -78,7 +81,7 @@ const Signin = () => {
         onChange={(e) => setCustomername(e.target.value)}
         className='form-control'
         required/> <br />
-        {customer_name}
+        {/* {customer_name} */}
 
         <input 
         type="password"
@@ -87,13 +90,13 @@ const Signin = () => {
         onChange={(e) => setPassword(e.target.value)}
         className='form-control' 
         required/> <br /><br />
-        {password}
+        {/* {password} */}
 
         <button type='submit' className='btn btn-outline-success'>Sign in</button>
         </form>
 
       </div>
-      
+      <Footer/>
     </div>
     
   )

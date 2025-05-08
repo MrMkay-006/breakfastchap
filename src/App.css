@@ -8,10 +8,15 @@
   font-size: 40px;
   margin-right: 40px;
 }
+.fd{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
 /* chat start */
 .chatbot-container {
   width: 400px;
-  height: 600px;
+  height: 500px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -96,58 +101,104 @@
     background-position-x: -200px ;
   }
 }
+/* about us start */
+.about-container {
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-transform: uppercase;
+  border-bottom: 3px solid #3498db;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.team-card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+
+/* about us end */
+.chat1{
+  width: 50px;
+  height: 50px;
+}
 /* nav starts */
-/* Background Image */
-body {
+.video-banner {
+  overflow: hidden;
+  transition: height 1s ease-in-out, opacity 1s ease-in;
+}
+.text-block {
+  background-color: #1bc0dd;
+  padding: 10px;
+  border-radius: 20px;
+  color: #000;
+  overflow: hidden;
+  transition: height 1s ease-in-out, opacity 1s ease-in;
   
-  margin: 0;
-  padding: 0;
 }
 
-/* Navbar Styling */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  backdrop-filter: blur(5px); /* Blur effect */
-  z-index: 1000;
-  background-image: url("leaf.jpg"); /* Background image */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-/* Logo */
-.navbar__logo img {
-  width: 80px; /* Adjust logo size */
+.video-banner.show,
+.text-block.show {
   height: auto;
+  opacity: 1;
 }
 
-/* Navigation Links */
-.navbar__nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  margin: 0 15px;
-  transition: 0.3s ease-in-out;
+.video-banner.hide,
+.text-block.hide {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Hover Effects */
-.navbar__nav a:hover {
-  color: #ffcc00; /* Golden highlight */
-  text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+.video-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+
 
 /* nav ends */
 #break{
   font-weight: 600;
-  font-size: 30px;  
+  font-size: 30px; 
+  color: rgb(241, 10, 172); 
 }
 .error{
   color: red;

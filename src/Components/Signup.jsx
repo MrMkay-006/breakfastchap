@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Signup = () => {
   const [customername, setCustomername] = useState("");
@@ -58,6 +60,7 @@ const Signup = () => {
   
   return (
     <div className='row justify-content-center mt-4'>
+      <Navbar/>
       <div className="col-md-6 card shadow">
         <h2>Sign Up</h2>
         <form onSubmit={submit}>
@@ -101,7 +104,7 @@ const Signup = () => {
         <p>Already have an account? <Link to={'/signin'}>Signin</Link></p> 
         
       </div>
-      
+      <Footer/>
     </div>
   )
 }

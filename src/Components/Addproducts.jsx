@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 const Addproducts = () => {
@@ -54,6 +56,7 @@ const Addproducts = () => {
 
   return (
     <div className='row justify-content-center mt-4'>
+      <Navbar/>
       <div className="col-md-6 card shadow p-4">
         <form onSubmit={submit}>
           <h2>Add Product</h2>
@@ -97,7 +100,7 @@ const Addproducts = () => {
 
         </form>
       </div>
-      
+      <Footer/>
     </div>
   )
 }

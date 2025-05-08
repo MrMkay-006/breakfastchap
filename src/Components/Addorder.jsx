@@ -1,11 +1,14 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Addorder = () => {
   const {product} = useLocation().state || {};
   
-  const [customer_name, setCustomername] = useState("");
+  const [customer_name, setCustomerName] = useState("");
+  const [quantity, setQuantity]=useState("1");
   
   // Function to get the current date in 'year-month-day' format
   const orderdate = () => {
@@ -17,6 +20,12 @@ const Addorder = () => {
 
     return `${year}-${month}-${day}`;
   }
+
+  const totalprice = () =>{
+    const price = product.food_price;
+    const total = price * quantity;
+    return total;
+  }
   
 
   // create three additional hooks to manage the state of your application when a person clicks the add product button
@@ -25,6 +34,7 @@ const Addorder = () => {
   const [message, setMessage] =useState("");
   const [error, setError] =useState("");
   const navigate = useNavigate("");
+  
 
   // create a function that will handle the submit event
   const submit = async(e)=>{
@@ -40,10 +50,12 @@ const Addorder = () => {
     data.append("order date",orderdate())
     data.append("food price", product.food_price)
     data.append("customer name", customer_name)
+    data.append("quantity", quantity)
+    data.append("total price", totalprice())
 
     
     try{
-      const response = await axios.post("https://mrmkay.pythonanywhere.com/api/add_order", data);
+      const response = await axios.post("https://mrmkay.pythonanywhere.com/api/add order", data);
       // set loading to empty
       setLoading("");
 
@@ -53,44 +65,61 @@ const Addorder = () => {
       setTimeout(() => {
         setMessage("");
       }, 8000)
-       navigate("/")
+      navigate("/mpesapayment",{state : {product}})
 
     }
     catch(error){
       setError("Failed to place the order. please try again")
     }
   }
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+        const parsedUser = JSON.parse(storedUser);
+        setCustomerName(parsedUser.customer_name);
+    }
+}, []);
   
 
   return (
     <div className='row justify-content-center mt-4'>
+      <Navbar/>
       <div className="col-md-6 card shadow p-4">
         <form onSubmit={submit}>
           <h2>Confirm your order</h2>
           {loading}
           <p className="message">{message}</p>
           <p className="error">{error}</p>
+          <p className="text-start">
           <p><span className="key">Food Name:</span> {product.food_name}</p> 
           <p><span className="key">Food Price:</span> {product.food_price}</p> 
-          {/* {customer_name}  */}
-          <p><span className="key">Order Date:</span> {orderdate()}</p> <br />
-          <p>Please fill your name to complete the order!</p>
+          <p><span className="key">Food Info:</span> {product.food_info}</p>
+          <p><span className="key">Order Date:</span> {orderdate()}</p>
+          <p><span className='key'>Total Price:</span> {totalprice()}</p>
+          </p>
+          <p>Please fill your name and quantity to complete the order!</p>
           
           <input 
           type="text"
           placeholder='Enter your username' 
           className='form-control'
           value={customer_name}
-          onChange={(e) => setCustomername(e.target.value)}
+          onChange={(e) => setCustomerName(e.target.value)}
           required/> <br />
-          {/* {customer_name} */}
+          <input
+          type='number'
+          className='form-control'
+          value={quantity}
+          onChange={(e)=> setQuantity(e.target.value)}
+          placeholder='Enter quantity'
+          required/> <br/>
 
           
           <button type='submit' className='btn btn-warning'>order now</button>
 
         </form>
       </div>
-      
+      <Footer/>
     </div>
   )
 }

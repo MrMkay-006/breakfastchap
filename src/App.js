@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Getproducts from './Components/Getproducts';
 import Addproducts from './Components/Addproducts';
@@ -36,6 +36,7 @@ function App() {
         <Route path='/aboutus' element={<Aboutus/>}/>
         <Route path='/Chat us' element={<ChatBot/>}/>
       </Routes>
+      
     </div>
 
     </Router>

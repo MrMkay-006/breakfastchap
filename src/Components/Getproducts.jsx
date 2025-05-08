@@ -4,11 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import ImageCarousel from './Carousel';
 import Navbar from './Navbar';
+import Topvideo from './Topvideo';
+
 
 const Getproducts = () => {
   const [products, setProducts] =useState([]); //this useState hook contains an empty array
   const [loading, setLoading] = useState("");
   const [error, setError] = useState('');
+  
 
   // create the navigate hook.
   // This hook will help navigate to the mpesa payment page when the purchase now button is clicked
@@ -66,7 +69,9 @@ const Getproducts = () => {
 
   return (
     <div className='row'>
+      
       <Navbar/>
+      <Topvideo/>
       {/* <Nav/> */}
       <ImageCarousel/>
       <div><h2>Welcome, {customerName}!</h2></div>
@@ -79,7 +84,38 @@ const Getproducts = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+
         {/* {search} */}
+    </div>
+    <h3>Search by category</h3>
+    <div className="col-md-3 mt-1">
+    <input type="button"
+        className='btn btn-info'
+        value="coffee"
+        onClick={(e)=> setSearch(e.target.value)} />
+
+    </div>
+    <div className="col-md-3 mt-1">
+    <input type="button"
+        className='btn btn-info'
+        value="pancake"
+        onClick={(e)=> setSearch(e.target.value)} />
+
+    </div>
+    <div className="col-md-3 mt-1">
+    <input type="button"
+        className='btn btn-info'
+        value="Juice"
+        onClick={(e)=> setSearch(e.target.value)} />
+
+    </div>
+
+    <div className="col-md-3 mt-1">
+    <input type="button"
+        className='btn btn-info'
+        value="Eggs"
+        onClick={(e)=> setSearch(e.target.value)} />
+
     </div>
       {/* bind the loading andthe error */}
       {loading}
@@ -96,7 +132,7 @@ const Getproducts = () => {
             <h5 className="mt-2">{product.food_name}</h5>
             <p className="text-muted">{product.food_info.slice(0,50)}...</p>
             <b className="text-warning">Kes {product.food_price}</b><br />
-            <button className='btn btn-info' onClick={() =>navigate("/mpesapayment",{state : {product}})}>Order Now</button>
+            <button className='btn btn-info' onClick={() =>navigate("/addorder",{state : {product}})}>Order Now</button>
           </div>
         </div>
        </div>
