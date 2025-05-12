@@ -85,8 +85,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="row">
-      <Navbar/>
+    <div className="row mt-5">
       <div className="col-md-4"></div>
       <div className="chatbot-container mb-4 p-3 col-md-4 ">
       <div className="chat-header">BreakfastChap Bot</div>

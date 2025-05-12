@@ -65,9 +65,8 @@ const Signin = () => {
 
   return (
     <div className='row justify-content-center mt-5'>
-      <Navbar/>
 
-      <div className="card shadow col-md-6 p-4">
+      <div className="card shadow col-md-6 mb-3 p-4">
         <h2>Sign In</h2>
         {error}
         {loading}

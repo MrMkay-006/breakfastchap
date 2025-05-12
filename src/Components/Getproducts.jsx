@@ -68,9 +68,8 @@ const Getproducts = () => {
 
 
   return (
-    <div className='row'>
+    <div className='row mt-5'>
       
-      <Navbar/>
       <Topvideo/>
       {/* <Nav/> */}
       <ImageCarousel/>
@@ -88,21 +87,21 @@ const Getproducts = () => {
         {/* {search} */}
     </div>
     <h3>Search by category</h3>
-    <div className="col-md-3 mt-1">
+    <div className="col-md-3 col-12 col-sm-3 mt-1">
     <input type="button"
         className='btn btn-info'
         value="coffee"
         onClick={(e)=> setSearch(e.target.value)} />
 
     </div>
-    <div className="col-md-3 mt-1">
+    <div className="col-md-3 col-12 col-sm-3 mt-1">
     <input type="button"
         className='btn btn-info'
         value="pancake"
         onClick={(e)=> setSearch(e.target.value)} />
 
     </div>
-    <div className="col-md-3 mt-1">
+    <div className="col-md-3 col-12 col-sm-3 mt-1">
     <input type="button"
         className='btn btn-info'
         value="Juice"
@@ -110,7 +109,7 @@ const Getproducts = () => {
 
     </div>
 
-    <div className="col-md-3 mt-1">
+    <div className="col-md-3 col-12 col-sm-3 mt-1">
     <input type="button"
         className='btn btn-info'
         value="Eggs"
@@ -122,7 +121,7 @@ const Getproducts = () => {
       <p className="error">{error}</p>
       
       {filtered_products.map((product)=>(
-       <div className="col-md-3 justify-content-center mb-4">
+       <div className="col-md-3 col-sm-6 justify-content-center mb-4">
         {/* below div will carry the card that contain a single product */}
         <div className="card shadow">
           <img src={img_url + product.food_photo} className='product_img mt-4' alt="" />

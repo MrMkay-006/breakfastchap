@@ -41,14 +41,13 @@ const Myorders = () => {
     }, [orders]); // Run when orders are fetched
 
     return (
-        <div className='row'>
-              <Navbar/>
+        <div className='row mt-5'>
               <h3 className="text-start">Hello {username && <span style={{color: "cyan"}}>{username}</span>}, this are the successful orders you placed</h3>
               {loading && <p>Loading orders please wait...</p>}
               {error && <p style={{ color: "red" }}>{error}</p>}
               
               {filteredOrders.map((order)=>(
-               <div className="col-md-3 justify-content-center mb-4">
+               <div className="col-md-3 col-sm-6 justify-content-center mb-4">
                 {/* below div will cary the card that contain a single product */}
                 <div className="card shadow">
         

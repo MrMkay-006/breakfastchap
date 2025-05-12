@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ImageCarousel = () => {
 return (
-<section className="row">
+<section className="row mt-5">
     <div className="col-md-1"></div>
     <div className="col-md-10">
         <div className="carousel slide" data-bs-ride="carousel" id="mycarousel">

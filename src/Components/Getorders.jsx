@@ -35,15 +35,14 @@ const Getorders = () => {
     []) //dependency(empty square brackets). this hook contains an empty array dependency to ensure that it only run once when the component (Getproducts component) renders.
 
   return (
-    <div className='row'>
-      <Navbar/>
+    <div className='row mt-5'>
       <h3 className='text-info mt-3'>This are the successfull placed orders;</h3>
       {/* bind the loading andthe error */}
       {loading}
       <p className="error">{error}</p>
       
       {orders.map((order)=>(
-       <div className="col-md-3 justify-content-center mb-4">
+       <div className="col-md-3 col-sm-6 justify-content-center mb-4">
         {/* below div will cary the card that contain a single product */}
         <div className="card shadow">
 

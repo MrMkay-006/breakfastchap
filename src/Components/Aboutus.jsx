@@ -13,8 +13,8 @@ const members = [
 const AboutUs = () => {
   return (
     <div className="about-container py-5">
-      <Navbar/>
-      <h2 className="text-center mb-5 section-title">Meet Our Team</h2>
+      
+      <h2 className="text-center mb-5 section-title ">Meet Our Team</h2>
 
       <div className="row justify-content-center">
         {members.map((member, index) => (

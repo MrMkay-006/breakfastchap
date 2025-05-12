@@ -59,9 +59,8 @@ const Signup = () => {
   };
   
   return (
-    <div className='row justify-content-center mt-4'>
-      <Navbar/>
-      <div className="col-md-6 card shadow">
+    <div className='row justify-content-center mt-5'>
+      <div className="col-md-6 card mb-3 shadow">
         <h2>Sign Up</h2>
         <form onSubmit={submit}>
 

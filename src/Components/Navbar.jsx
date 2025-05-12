@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-md navbar-light bg-light shadow-sm mt-1 mb-2">
+      <nav className="navbar fixed-top navbar-expand-md navbar-info bg-light shadow-sm mt-5 pt-5 mb-5 ">
         <Link to="/" className="navbar-brand fw-bold">
-          <span className="break">..Breakfast</span><span className="chap">Chap</span>
+          <span className="break">  Breakfast</span><span className="chap">Chap</span>
         </Link>
 
         <button

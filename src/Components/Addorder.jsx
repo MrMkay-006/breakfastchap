@@ -82,37 +82,39 @@ const Addorder = () => {
   
 
   return (
-    <div className='row justify-content-center mt-4'>
-      <Navbar/>
-      <div className="col-md-6 card shadow p-4">
+    <div className='row justify-content-center mt-5'>
+      
+      <div className="col-md-6 card shadow mb-3 p-4">
         <form onSubmit={submit}>
           <h2>Confirm your order</h2>
           {loading}
           <p className="message">{message}</p>
           <p className="error">{error}</p>
           <p className="text-start">
-          <p><span className="key">Food Name:</span> {product.food_name}</p> 
-          <p><span className="key">Food Price:</span> {product.food_price}</p> 
+          <p><span className="key ">Food Name:</span> {product.food_name}</p>
           <p><span className="key">Food Info:</span> {product.food_info}</p>
-          <p><span className="key">Order Date:</span> {orderdate()}</p>
-          <p><span className='key'>Total Price:</span> {totalprice()}</p>
+          <p> <span className="key ">Unit Price:</span> {product.food_price} 
+          <span className='key ms-5'>Total Price:</span> {totalprice()}</p>
           </p>
           <p>Please fill your name and quantity to complete the order!</p>
           
-          <input 
+          <div className="row">
+            <div className="col-md-6"><input 
           type="text"
           placeholder='Enter your username' 
           className='form-control'
           value={customer_name}
           onChange={(e) => setCustomerName(e.target.value)}
           required/> <br />
-          <input
+          </div>
+            <div className="col-md-6"><input
           type='number'
           className='form-control'
           value={quantity}
           onChange={(e)=> setQuantity(e.target.value)}
           placeholder='Enter quantity'
-          required/> <br/>
+          required/> <br/></div>
+          </div>
 
           
           <button type='submit' className='btn btn-warning'>order now</button>

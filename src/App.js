@@ -12,18 +12,22 @@ import Mpesapayment from './Components/Mpesapayment';
 import Aboutus from './Components/Aboutus';
 import Myorder from './Components/Myorder';
 import ChatBot from './Components/Chatbot';
+import Header from './Components/Header';
+import Navbar from './Components/Navbar';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-      <header className="App-header">
-        <nav>
-        <h1 className="head">BreakfastChap</h1>       
-        </nav>
-        
-      </header>
+      <Header/>
+      <Navbar/>
+      
+      <div className='app-margin'></div>
+      
+
+
+
       <Routes>
         <Route path='/' element={<Getproducts/>}/>
         <Route path='/addproduct' element={<Addproducts/>}/>

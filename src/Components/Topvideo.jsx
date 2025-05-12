@@ -18,10 +18,10 @@ const Topvideo = () => {
   }, []);
 
   return (
-    <div className='row align-items-center m-0'>
+    <div className='row align-items-center ms-1'>
       {/* Text Content - Collapses with video */}
-      <div className={`col-12 col-md-4 mb-4  text-block ${showVideo ? "show" : "hide"}`}>
-        <h1 className='mt-3'>Welcome TO <span id='break'>Breakfast</span><span id="chap">Chap</span></h1>
+      <div className={`col-12 col-md-4 mb-4 text-block ${showVideo ? "show" : "hide"}`}>
+        <h1 className='mt-3'>Welcome TO <span className='break'>Breakfast</span><span className="chap">Chap</span></h1>
         <h3 className='text-start'>Your one-stop destination for a delicious breakfast</h3>
         <h3 className='text-start'>We serve the best breakfast in town</h3>
         <h3 className='text-start'>Order now and enjoy a delightful morning</h3>
